@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catálogo - Who's Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Who's Store</h1>
+    <nav>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="carrito.html">Carrito</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Catálogo de Productos</h2>
+    <section class="catalogo" id="listaProductos"></section>
+  </main>
+
+  <script>
+    const productos = [
+      { id: 1, nombre: "Camiseta Oversize", precio: 85000, descripcion: "Diseño urbano", imagen: "https://i.imgur.com/Ye5N4kK.jpg" },
+      { id: 2, nombre: "Buzo Essentials", precio: 145000, descripcion: "Sudadera premium", imagen: "https://i.imgur.com/2E5PYbE.jpg" },
+      { id: 3, nombre: "Tenis Jordan 1", precio: 520000, descripcion: "Edición especial", imagen: "https://i.imgur.com/D0JZHL6.jpg" }
+    ];
+
+    const contenedor = document.getElementById("listaProductos");
+
+    productos.forEach(prod => {
+      const card = document.createElement("div");
+      card.className = "producto";
+      card.innerHTML = `
+        <img src="${prod.imagen}" alt="${prod.nombre}">
+        <h3>${prod.nombre}</h3>
+        <p>${prod.descripcion}</p>
+        <p><strong>$${prod.precio.toLocaleString()}</strong></p>
+        <button onclick="agregarAlCarrito(${prod.id})">Agregar al carrito</button>
+      `;
+      contenedor.appendChild(card);
+    });
+
+    function agregarAlCarrito(id) {
+      const producto = productos.find(p => p.id === id);
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      carrito.push(producto);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      alert("Producto agregado al carrito");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - Who's Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Panel de Administración</h1>
+    <nav>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="carrito.html">Carrito</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="loginContainer" class="login-form">
+      <h3>Iniciar sesión como administrador</h3>
+      <input type="text" id="usuario" placeholder="Usuario" />
+      <input type="password" id="clave" placeholder="Contraseña" />
+      <button onclick="login()">Ingresar</button>
+    </div>
+
+    <section id="adminPanel" style="display:none">
+      <h2>Bienvenido, Wilfrido</h2>
+      <p>Aquí podrás gestionar productos, pedidos y más.</p>
+    </section>
+  </main>
+
+  <script>
+    function login() {
+      const user = document.getElementById("usuario").value.trim();
+      const pass = document.getElementById("clave").value.trim();
+      if (user === "Wilfrido Colina" && pass === "17012005") {
+        document.getElementById("loginContainer").style.display = "none";
+        document.getElementById("adminPanel").style.display = "block";
+      } else {
+        alert("Credenciales incorrectas");
+      }
+    }
+  </script>
+</body>
+</html>

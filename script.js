@@ -1,0 +1,1 @@
+// Script adicional para funciones compartidas si lo necesitas en el futuro

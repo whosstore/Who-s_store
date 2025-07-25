@@ -1,0 +1,5 @@
+[
+  { "id": 1, "nombre": "Camiseta Oversize", "precio": 85000, "descripcion": "Diseño urbano", "imagen": "https://i.imgur.com/Ye5N4kK.jpg" },
+  { "id": 2, "nombre": "Buzo Essentials", "precio": 145000, "descripcion": "Sudadera premium", "imagen": "https://i.imgur.com/2E5PYbE.jpg" },
+  { "id": 3, "nombre": "Tenis Jordan 1", "precio": 520000, "descripcion": "Edición especial", "imagen": "https://i.imgur.com/D0JZHL6.jpg" }
+]
